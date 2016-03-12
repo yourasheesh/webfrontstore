@@ -1,0 +1,68 @@
+<?xml version="1.0"?> 
+
+<!--
+/**
+ * Dev Asheesh Singh
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ *
+ * @category    Asheesh
+ * @package     Asheesh_Webfrontstore
+ * @author 		Asheesh Singh <yourasheesh@gmail.com>
+ * @copyright   Copyright Asheesh Singh
+ * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */ 
+-->
+
+<layout>	
+	
+<!--
+Slider Image page
+-->
+	<adminhtml_adminhtml_webfrontstore_index>
+       <reference name="content">
+           <block type="webfrontstore_blocks/adminhtml_webfrontstore" name="asheesh.webfrontstore" />
+       </reference>
+	</adminhtml_adminhtml_webfrontstore_index>
+	
+<!--
+Slider Images grid 
+-->
+	<adminhtml_adminhtml_webfrontstore_grid>
+		<block type="core/text_list" name="root" output="toHtml">
+			<block type="webfrontstore_blocks/adminhtml_webfrontstore_grid" name="asheesh.webfrontstore.grid"/>
+		</block>
+	</adminhtml_adminhtml_webfrontstore_grid>
+	
+<!--
+New Slider Image layout
+-->
+	<adminhtml_adminhtml_webfrontstore_new>
+		<reference name="left">
+			<block type="webfrontstore_blocks/adminhtml_webfrontstore_edit_tabs" name="asheesh.webfrontstore.edit.tabs"/>
+		</reference>
+		<reference name="content">
+			<block type="webfrontstore_blocks/adminhtml_webfrontstore_edit" name="asheesh.webfrontstore.edit"/>
+		</reference>
+	</adminhtml_adminhtml_webfrontstore_new>
+	
+<!--
+Slider Image edit layout
+-->
+	<adminhtml_adminhtml_webfrontstore_edit>
+		<update handle="adminhtml_adminhtml_webfrontstore_new"/>
+	</adminhtml_adminhtml_webfrontstore_edit>
+	
+	<adminhtml_adminhtml_webfrontstore_import>
+        <reference name="content">
+            <block type="adminhtml/template" template="importexport/import/form/before.phtml" name="import.form.before" alias="form_before"/>
+            <block type="webfrontstore_blocks/adminhtml_webfrontstore_import_edit" name="asheesh.webfrontstore.import.edit"/>
+            <block type="adminhtml/template" template="importexport/import/form/after.phtml" name="import.form.after" alias="form_after"/>
+        </reference>
+    </adminhtml_adminhtml_webfrontstore_import>
+</layout>

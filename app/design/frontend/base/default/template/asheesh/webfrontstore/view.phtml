@@ -1,0 +1,19 @@
+<?php 
+	$product = $this->currentProductData(); 
+?>
+<hr>
+Product Details:<br>
+<?php foreach($product as $label=>$value){ ?>
+   <?php echo '<b>'.$label.'</b>::'.$value.'<br>'; ?>
+<?php } ?>
+<hr>
+<?php if(isset($product['groupid']) && strlen($product['groupid']) > 0) { ?>
+	Product Versions:<br>
+	<?php $versions = $this->currentProductDataVersions($product['groupid']); ?>
+	<?php foreach($versions as $value){
+	   
+	   echo '<hr><a href="'.Mage::getUrl('*/*/view',array('id'=>$value->getId())).'">';
+				 print_r($value->getData());
+				 echo "</a><br>";
+	} ?>
+<?php } ?>

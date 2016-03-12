@@ -1,0 +1,52 @@
+<?xml version="1.0"?> 
+
+<!--
+/**
+ * Dev Asheesh Singh
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ *
+ * @category    Asheesh
+ * @package     Asheesh_Webfrontstore
+ * @author 		Asheesh Singh <yourasheesh@gmail.com>
+ * @copyright   Copyright Asheesh Singh
+ * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */ 
+-->
+
+<layout>
+
+	<webfrontstore_js_n_css>
+		<label>Jssor Slide Show</label>
+        <reference name="head">
+			<action method="setTitle"><title>Jssor Slide Show | Developed By Asheesh Singh</title></action>
+			<action method="addJs"><script>asheesh/jssor.slider.min.js</script></action>
+		</reference>
+	</webfrontstore_js_n_css>
+	
+	
+	<webfrontstore_route_name_wfs_index>
+		<update handle="webfrontstore_js_n_css" />
+		<reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+		</reference>
+        <reference name="content">
+            <block type="webfrontstore_blocks/result" name="webfrontstore.search" as="search" template="asheesh/webfrontstore/result.phtml" />
+        </reference>
+	</webfrontstore_route_name_wfs_index>
+	
+	<webfrontstore_route_name_wfs_view>
+		<update handle="webfrontstore_js_n_css" />
+		<reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+		</reference>
+        <reference name="content">
+            <block type="webfrontstore_blocks/view" name="webfrontstore.search" as="search" template="asheesh/webfrontstore/view.phtml" />
+        </reference>
+	</webfrontstore_route_name_wfs_view>
+</layout>

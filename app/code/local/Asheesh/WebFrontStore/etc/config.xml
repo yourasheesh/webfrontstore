@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?> 
+
+<!--
+/**
+ * Dev Asheesh Singh
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ *
+ * @category    Asheesh
+ * @package     Asheesh_WebFrontStore
+ * @author 		Asheesh Singh <yourasheesh@gmail.com>
+ * @copyright   Copyright Asheesh Singh
+ * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+--> 
+
+<config>
+	<modules>
+		<Asheesh_WebFrontStore>
+			<version>0.0.1</version>
+			<author>Asheesh Singh (yourasheesh@gmail.com)</author>
+		</Asheesh_WebFrontStore>
+	</modules>
+	<frontend>
+		<routers>
+			<webfrontstore_route_name>
+				<use>standard</use>
+				<args>
+					<module>Asheesh_WebFrontStore</module>
+					<frontName>webfrontstore_calling_name</frontName>
+				</args>
+			</webfrontstore_route_name>
+		</routers>
+		<layout>
+			<updates>
+				<webfrontstore_frontend_layout>
+					<file>asheesh/webfrontstore.xml</file>
+				</webfrontstore_frontend_layout>
+			</updates>
+		</layout>
+		<!-- <translate>
+			<modules>
+				<webfrontstore_frontend_translate>
+					<files>
+						<default>Asheesh_WebFrontStore.csv</default>
+					</files>
+				</webfrontstore_frontend_translate>
+			</modules>
+		</translate> -->
+	</frontend>
+	<admin>
+		<routers>
+			<adminhtml> <!-- Mage_Adminhtml route name used due to security reason as per SUPEE-6788 -->
+				<args>
+					<modules>
+						<webfrontstore after="Mage_Adminhtml">Asheesh_WebFrontStore</webfrontstore>
+					</modules>
+				</args>
+			</adminhtml>
+		</routers>
+	</admin>
+	<adminhtml>
+		<!-- <translate>
+			<modules>
+				<webfrontstore_admin_translate>
+					<files>
+						<default>Asheesh_WebFrontStore.csv</default>
+					</files>
+				</webfrontstore_admin_translate>
+			</modules>
+		</translate> -->
+		<layout>
+			<updates>
+				<webfrontstore_admin_layout>
+					<file>asheesh/webfrontstore.xml</file>
+				</webfrontstore_admin_layout>
+			</updates>
+		</layout>
+	</adminhtml>
+	<global>
+		<helpers>
+			<webfrontstore_helpers>
+				<class>Asheesh_WebFrontStore_Helper</class>
+			</webfrontstore_helpers>
+		</helpers>
+		<blocks>
+			<webfrontstore_blocks>
+				<class>Asheesh_WebFrontStore_Block</class>
+			</webfrontstore_blocks>
+		</blocks>
+		<models>
+            <webfrontstore_models>
+                <class>Asheesh_WebFrontStore_Model</class>
+                <resourceModel>webfrontstore_resource_models_mysql4</resourceModel>
+            </webfrontstore_models>
+            <webfrontstore_resource_models_mysql4>
+                <class>Asheesh_WebFrontStore_Model_Mysql4</class> <!-- Using Mysql4 parent classes for compatibility with less then or equal magento community version 1.6.x -->
+                <entities>
+                    <products>
+                        <table>asheesh_webfrontstore_products</table>
+                    </products>
+					<categories>
+                        <table>asheesh_webfrontstore_categories</table>
+                    </categories>
+					<groups>
+                        <table>asheesh_webfrontstore_groups</table>
+                    </groups>
+                </entities>
+            </webfrontstore_resource_models_mysql4>
+        </models>
+        <resources>
+            <webfrontstore_setup>
+                <setup>
+                    <module>Asheesh_WebFrontStore</module>
+                </setup>
+            </webfrontstore_setup>
+        </resources>
+	</global>
+	<default>
+		<asheesh_webfrontstore>
+			<general>
+				<activation>1</activation>
+			</general>
+		</asheesh_webfrontstore>
+	</default>
+</config>

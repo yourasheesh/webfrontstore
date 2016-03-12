@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?> 
+
+<!--
+/**
+ * Dev Asheesh Singh
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ *
+ * @category    Asheesh
+ * @package     Asheesh_WebFrontStore
+ * @author 		Asheesh Singh <yourasheesh@gmail.com>
+ * @copyright   Copyright Asheesh Singh
+ * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+--> 
+
+<config>
+	<menu>
+		<webfrontstore_menu module="webfrontstore_helpers" translate="title">
+			<title>Dev Asheesh</title>
+			<sort_order>90</sort_order> 
+			<children>
+				<webfrontstore_submenu1 module="webfrontstore_helpers" translate="title">
+					<title>Manage Products</title>
+					<sort_order>10</sort_order>
+					<action>adminhtml/adminhtml_webfrontstore/index</action>
+				</webfrontstore_submenu1>
+				<webfrontstore_submenu11 module="webfrontstore_helpers" translate="title">
+					<title>Import Products CSV</title>
+					<sort_order>20</sort_order>
+					<action>adminhtml/adminhtml_webfrontstore/import</action>
+				</webfrontstore_submenu11>
+				<webfrontstore_submenu2 module="webfrontstore_helpers" translate="title">
+					<title>WebFrontStore Configuration</title>
+					<sort_order>30</sort_order>
+					<action>adminhtml/system_config/edit/section/asheesh_webfrontstore/</action>
+				</webfrontstore_submenu2>
+			</children>
+			<depends><config>asheesh_webfrontstore/general/activation</config></depends>
+		</webfrontstore_menu>		
+	</menu>
+	<acl>
+		<resources>
+			<all>
+				<title>Allow Everything of Asheesh_WebFrontStore</title>
+			</all> 
+			<admin>
+				<children>
+					<system>
+                        <children>
+							<config>
+								<children>
+									<asheesh_webfrontstore>
+										<title>Allow Web front Store Configuration Resource</title>
+										<sort_order>200</sort_order>
+									</asheesh_webfrontstore>
+								</children>
+							</config>
+						</children>
+                    </system>
+					<webfrontstore_menu module="webfrontstore_helpers" translate="title">
+						<title>Allow Dev Asheesh Resources</title>
+						<sort_order>200</sort_order>
+						<children>
+							<webfrontstore_submenu1 module="webfrontstore_helpers" translate="title">
+								<title>Allow Manage Products Resource</title>
+								<sort_order>10</sort_order>
+							</webfrontstore_submenu1>
+							<webfrontstore_submenu11 module="webfrontstore_helpers" translate="title">
+								<title>Allow Import Products CSV Resource</title>
+								<sort_order>15</sort_order>
+							</webfrontstore_submenu11>
+							<webfrontstore_submenu2 module="webfrontstore_helpers" translate="title">
+								<title>Allow WebFrontStore Configuration Resource</title>
+								<sort_order>20</sort_order>
+							</webfrontstore_submenu2>
+						</children>
+					</webfrontstore_menu>
+				</children>
+			</admin>
+		</resources>
+	</acl>
+</config>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?> 
+
+<!--
+/**
+ * Dev Asheesh Singh
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ *
+ * @category    Asheesh
+ * @package     Asheesh_WebFrontStore
+ * @author 		Asheesh Singh <yourasheesh@gmail.com>
+ * @copyright   Copyright Asheesh Singh
+ * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+--> 
+
+<config>
+	<tabs>
+        <devasheesh translate="label" module="webfrontstore_helpers">
+            <label>Dev Asheesh</label>
+            <sort_order>10</sort_order>
+        </devasheesh>
+    </tabs>
+	<sections>
+		<asheesh_webfrontstore translate="label" module="webfrontstore_helpers">
+			<label>WebFrontStore Configuration</label>
+			<tab>devasheesh</tab>
+			<frontend_type>text</frontend_type>
+			<sort_order>10</sort_order>
+			<show_in_website>1</show_in_website>
+			<show_in_default>1</show_in_default>
+			<groups>
+				<general translate="label">
+					<label>General</label>
+					<show_in_website>1</show_in_website>
+					<show_in_default>1</show_in_default>
+					<sort_order>2</sort_order>
+					<fields>
+						<activation translate="label">
+							<label>Enable WebFrontStore System</label>
+							<frontend_type>select</frontend_type>
+							<comment></comment>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>1</sort_order>
+							<show_in_website>1</show_in_website>
+							<show_in_default>1</show_in_default>
+						</activation>
+					</fields>
+				</general> 
+			</groups>
+		</asheesh_webfrontstore>
+	</sections>
+</config>
